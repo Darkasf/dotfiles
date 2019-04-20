@@ -103,4 +103,3 @@ source $ZSH/oh-my-zsh.sh
 export DEFAULT_USER=w
 export PATH=/home/w/bin/:$PATH
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-eval (thefuck --alias --enable-experimental-instant-mode)
