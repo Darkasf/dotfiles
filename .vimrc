@@ -8,6 +8,12 @@ inoremap <F2> <ESC>:tabn<LF>gi
 vnoremap <F1> <ESC>:tabp<LF>gv
 vnoremap <F2> <ESC>:tabn<LF>gv
 
+" can't stop holding shift
+:command W w
+:command Q q
+:command WQ wq
+:command Wq wq
+
 " spacing
 filetype plugin indent on
 set smartindent
