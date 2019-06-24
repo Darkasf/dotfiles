@@ -1,0 +1,43 @@
+command=~/.scripts/statusbar/$BLOCK_NAME
+separator_block_width=15
+markup=pango
+
+[brightness]
+interval=once
+
+[weather]
+command=weather
+interval=1800
+signal=5
+
+#[memory]
+#interval=30
+#label=🧠
+
+#[cpu]
+#interval=15
+#label=💻
+
+[volume]
+interval=once
+signal=10
+
+#[disk]
+#interval=60
+#command=disk /
+
+#[disk]
+#interval=60
+#command=disk /home 🏠
+
+[battery]
+command=battery BAT1
+interval=5
+
+[clock]
+label=📅
+interval=30
+
+[internet]
+interval=10
+
