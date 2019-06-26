@@ -72,7 +72,6 @@ bindsym $mod+Shift+Return	exec --no-startup-id samedir
 bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+space		focus mode_toggle
 
-bindsym $mod+Escape		workspace prev
 bindsym $mod+Shift+Escape 	exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
 
 # bindsym $mod+BackSpace
@@ -269,6 +268,7 @@ bindsym $mod+minus 		exec --no-startup-id amixer -D pulse sset Master 5%-
 bindsym $mod+Shift+minus	exec --no-startup-id amixer -D pulse sset Master 15%-
 bindsym $mod+Shift+comma 		exec --no-startup-id playerctl prev
 bindsym $mod+Shift+period		exec --no-startup-id playerctl next
+bindsym $mod+Escape             exec --no-startup-id playerctl play-pause
 
 # For advancing forward/backward in an mpd song
 bindsym $mod+bracketleft 	exec --no-startup-id lmc back 10
