@@ -17,7 +17,7 @@ set $stoprec --no-startup-id dmenurecord kill
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
-set $suspend sudo -A systemctl suspend
+set $suspend i3lockr --blur 25 && pgrep i3lock && systemctl suspend
 
 
 # keyboard maps
@@ -150,7 +150,7 @@ bindsym $mod+Shift+l		move right 30
 bindsym $mod+z			gaps outer current plus 5
 bindsym $mod+Shift+z		gaps outer current minus 5
 
-bindsym $mod+x			exec --no-startup-id playerctl pause; exec --no-startup-id i3lockr --blur 25
+bindsym $mod+x			exec --no-startup-id playerctl pause; exec --no-startup-id lock.sh &
 bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
 
 bindsym $mod+c			exec --no-startup-id cabl
