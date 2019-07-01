@@ -17,7 +17,7 @@ set $stoprec --no-startup-id dmenurecord kill
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
-set $suspend i3lockr --blur 25 && pgrep i3lock && systemctl suspend
+set $suspend "i3lockr --blur 25 && sleep 1 && pgrep i3lock && systemctl suspend"
 
 
 # keyboard maps
@@ -27,8 +27,8 @@ bindsym $mod+period exec setxkbmap hu 101_qwerty_dot_nodead
 # window resizing with arrow keys
 bindsym $mod+Control+h exec --no-startup-id i3resize left
 bindsym $mod+Control+l exec --no-startup-id i3resize right
-bindsym $mod+Control+j exec --no-startup-id i3resize up
-bindsym $mod+Control+k exec --no-startup-id i3resize down
+bindsym $mod+Control+j exec --no-startup-id i3resize down
+bindsym $mod+Control+k exec --no-startup-id i3resize up
 
 
 # #---Dropdown Windows---# #
