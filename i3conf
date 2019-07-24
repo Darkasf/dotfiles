@@ -17,7 +17,6 @@ set $stoprec --no-startup-id dmenurecord kill
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
-set $suspend "i3lockr --blur 25 && sleep 1 && pgrep i3lock && systemctl suspend"
 
 
 # keyboard maps
@@ -241,7 +240,7 @@ no_focus [title="mpvfloat"]
 bindsym $mod+F1		exec --no-startup-id groff -mom ~/.local/share/larbs/readme.mom -Tpdf | zathura -
 bindsym $mod+F2		restart
 bindsym $mod+F3		exec --no-startup-id displayselect
-bindsym $mod+F4		exec --no-startup-id prompt "Suspend computer?" "$suspend"
+bindsym $mod+F4		exec --no-startup-id prompt "Suspend computer?" "suspend.sh"
 bindsym $mod+F5		exec --no-startup-id $netrefresh
 bindsym $mod+F6		exec --no-startup-id torwrap
 bindsym $mod+F7		exec --no-startup-id td-toggle
