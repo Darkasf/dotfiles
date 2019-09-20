@@ -9,8 +9,8 @@
 
 # #---Basic Definitions---# #
 for_window [class="^.*"] border pixel 2
-gaps inner 10
-gaps outer 10
+gaps inner 5
+gaps outer 5
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 set $stoprec --no-startup-id dmenurecord kill
@@ -43,6 +43,8 @@ for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
 # #---Starting External Scripts---# #
+# profile
+exec --no-startup-id source ~/.profile
 # Setting the background:
 exec --no-startup-id setbg
 # Starts dunst for notifications:
@@ -237,18 +239,12 @@ for_window [title="mpvfloat"] border pixel 0
 no_focus [title="mpvfloat"]
 
 # #---Function Buttons---# #
-bindsym $mod+F1		exec --no-startup-id groff -mom ~/.local/share/larbs/readme.mom -Tpdf | zathura -
 bindsym $mod+F2		restart
 bindsym $mod+F3		exec --no-startup-id displayselect
 bindsym $mod+F4		exec --no-startup-id prompt "Suspend computer?" "suspend.sh"
 bindsym $mod+F5		exec --no-startup-id $netrefresh
-bindsym $mod+F6		exec --no-startup-id torwrap
-bindsym $mod+F7		exec --no-startup-id td-toggle
-bindsym $mod+F8		exec --no-startup-id ~/.config/mutt/etc/mailsync.sh
 bindsym $mod+F9		exec --no-startup-id dmenumount
 bindsym $mod+F10	exec --no-startup-id dmenuumount
-bindsym $mod+F11	exec --no-startup-id ducksearch
-bindsym $mod+F12	exec $term -e nmtui
 
 # #---Arrow Keys---# #
 bindsym $mod+Left		focus left
@@ -268,12 +264,6 @@ bindsym $mod+Shift+minus	exec --no-startup-id amixer -D pulse sset Master 15%-
 bindsym $mod+Shift+comma 		exec --no-startup-id playerctl prev
 bindsym $mod+Shift+period		exec --no-startup-id playerctl next
 bindsym $mod+Escape             exec --no-startup-id playerctl play-pause
-
-# For advancing forward/backward in an mpd song
-bindsym $mod+bracketleft 	exec --no-startup-id lmc back 10
-bindsym $mod+Shift+bracketleft 	exec --no-startup-id lmc back 120
-bindsym $mod+bracketright 	exec --no-startup-id lmc forward 10
-bindsym $mod+Shift+bracketright exec --no-startup-id lmc forward 120
 
 # For screenshots and recording
 bindsym Print 			exec --no-startup-id maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
@@ -334,23 +324,12 @@ bindsym XF86Reload		restart
 ##bindsym XF86Launch8		exec
 ##bindsym XF86Launch9		exec
 #bindsym XF86AudioMicMute	exec $micmute
-bindsym XF86TouchpadToggle	exec --no-startup-id toggletouchpad
-bindsym XF86TouchpadOn		exec --no-startup-id synclient TouchpadOff=0
-bindsym XF86TouchpadOff		exec --no-startup-id synclient TouchpadOff=1
-bindsym XF86Suspend		exec --no-startup-id lockscreen
 bindsym XF86Close		kill
-bindsym XF86WebCam		exec --no-startup-id camtoggle
-bindsym XF86Mail		exec $term -e neomutt && pkill -RTMIN+12 i3blocks
-bindsym XF86Messenger		exec $term -e weechat
-bindsym XF86Search		exec $BROWSER https://duckduckgo.com
 ##bindsym XF86Go		exec
 ##bindsym XF86Finance		exec
 ##bindsym XF86Game		exec
-bindsym XF86Shop		exec $BROWSER https://ebay.com
 bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 15
 bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 15
-bindsym XF86AudioMedia		exec --no-startup-id $term -e ncmpcpp
-bindsym XF86Display		exec --no-startup-id displayselect
 #bindsym XF86KbdLightOnOff	exec
 #bindsym XF86KbdBrightnessDown	exec
 #bindsym XF86KbdBrightnessUp	exec
