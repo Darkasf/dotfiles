@@ -22,8 +22,6 @@ export LESS_TERMCAP_se="$(printf '%b' '[0m')"; a="${a%_}"
 export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"; a="${a%_}"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 
-[ ! -f ~/.config/shortcutrc ] && shortcuts >/dev/null 2>&1
-
 # Start graphical server if i3 not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
 
@@ -38,3 +36,5 @@ id=`xinput list | grep Touchpad | grep -o 'id=..' | grep -o '[0-9]*'`
 prop=`xinput list-props "$id" | grep -o 'Natural Scrolling Enabled (...)' | grep -o '[0-9]*'`
 xinput set-prop "$id" "$prop" 1
 
+#set refresh rate
+xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
