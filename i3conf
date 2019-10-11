@@ -58,14 +58,6 @@ exec --no-startup-id unclutter
 # Start flashfocus
 exec_always --no-startup-id flashfocus
 
-bar {
-	font pango:mono 10
-	status_command i3blocks
-	position top
-	mode dock
-	modifier None
-}
-
 # #---Basic Bindings---# #
 bindsym $mod+Return 		exec $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir

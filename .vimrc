@@ -1,5 +1,6 @@
 let g:powerline_pycmd="py3"
 set laststatus=2
+let mapleader = ","
 "tab navigation
 map <F1> :tabp<LF>
 map <F2> :tabn<LF>
@@ -109,6 +110,9 @@ set clipboard=unnamedplus
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
 	autocmd VimLeave *.tex !texclear %
+
+" .tex formatting
+    autocmd FileType tex inoremap <F12> \begin{itemize}<CR>\end{itemize}<ESC>O\item
 
 " Ensure files are read as what I want:
 	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
