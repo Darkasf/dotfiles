@@ -43,6 +43,8 @@ for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
 # #---Starting External Scripts---# #
+# polybar
+exec --no-startup-id ~/.config/polybar/launch.sh
 # profile
 exec --no-startup-id source ~/.profile
 # Setting the background:
