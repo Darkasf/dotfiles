@@ -340,3 +340,4 @@ bindsym XF86WLAN		exec $netrefresh
 for_window [class="Spotify"] move to workspace 10
 assign [class="discord"] 10
 for_window [instance="libreoffice"] move to workspace 5
+assign [class="hl2linux"] 3
