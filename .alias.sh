@@ -18,7 +18,7 @@ cdmkdir() {
 	mkdir -p "$1";
 	cd "$1";
 }
-alias cmkdir="cdmkdir"
 alias py="python"
 alias nuke="killall -9"
 alias sudoe="sudo -e"
+alias n="nnn"
