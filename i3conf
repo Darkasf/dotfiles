@@ -66,7 +66,6 @@ bindsym $mod+Shift+Return	exec --no-startup-id samedir
 
 bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+space		focus mode_toggle
-
 bindsym $mod+Shift+Escape 	exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
 
 # bindsym $mod+BackSpace
@@ -75,7 +74,7 @@ bindsym $mod+Shift+BackSpace	exec --no-startup-id prompt "Reboot computer?" "$re
 bindsym $mod+grave		exec --no-startup-id dmenuunicode
 ##bindsym $mod+asciitilde
 
-#STOP/HIDE EVERYTHING:
+
 bindsym $mod+Shift+Delete	exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; exec --no-startup-id pauseallmpv; workspace 0; exec $term -e htop ; exec $term -e $FILE
 
 # Show selection:
@@ -87,6 +86,7 @@ bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] exec -
 
 bindsym $mod+w			exec $term -e nmtui
 bindsym $mod+Shift+w		exec --no-startup-id $BROWSER
+#STOP/HIDE EVERYTHING:
 
 bindsym $mod+e			exec --no-startup-id lecture
 
