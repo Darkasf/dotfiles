@@ -60,6 +60,8 @@ exec --no-startup-id remaps
 exec --no-startup-id unclutter
 # Start flashfocus
 exec_always --no-startup-id flashfocus
+# Autlocking
+exec --no-startup-id autolock
 
 # #---Basic Bindings---# #
 bindsym $mod+Return 		exec $term
@@ -146,13 +148,12 @@ bindsym $mod+Shift+l		move right 30
 bindsym $mod+z			gaps outer current plus 5
 bindsym $mod+Shift+z		gaps outer current minus 5
 
-bindsym $mod+x			exec --no-startup-id playerctl pause; exec --no-startup-id lock.sh &
+bindsym $mod+x			exec --no-startup-id lock.sh
 bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
 
 bindsym $mod+c			exec --no-startup-id cabl
 bindsym $mod+Shift+c		exec --no-startup-id camtoggle
 
-bindsym $mod+v			exec --no-startup-id $term -e $EDITOR -c "VimwikiIndex"
 #bindsym $mod+Shift+v
 
 bindsym $mod+b			bar mode toggle
@@ -311,7 +312,7 @@ bindsym XF86Reload		restart
 ##bindsym XF86LaunchA		exec
 ##bindsym XF86LaunchB		exec
 ##bindsym XF86Launch2		exec
-##bindsym XF86Launch3		exec
+bindsym XF86Launch3		exec $TERM
 ##bindsym XF86Launch4		exec
 ##bindsym XF86Launch5		exec
 ##bindsym XF86Launch6		exec
