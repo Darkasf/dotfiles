@@ -53,11 +53,9 @@ exec --no-startup-id setbg `find "$HOME/Pictures/wallpapers" | sort -R | tail -n
 # Starts dunst for notifications:
 exec --no-startup-id dunst
 # Composite manager:
-exec --no-startup-id compton -bc --config "$HOME/.config/compton.conf"
+exec --no-startup-id picom -bc --config "$HOME/.config/picom.conf"
 # Runs the key remapping scripts
 exec --no-startup-id remaps
-# Unclutter makes the mouse invisible after a brief period
-exec --no-startup-id unclutter
 # Start flashfocus
 exec_always --no-startup-id flashfocus
 # Autlocking
@@ -89,7 +87,6 @@ bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] exec -
 
 bindsym $mod+w			exec $term -e nmtui
 bindsym $mod+Shift+w		exec --no-startup-id $BROWSER
-#STOP/HIDE EVERYTHING:
 
 bindsym $mod+e			exec --no-startup-id lecture
 
