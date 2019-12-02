@@ -28,8 +28,6 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 # Switch escape and caps if tty:
 sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
 #disable dpms
-xset -dpms
-xset s noblank
 
 #disable natural scrolling
 id=`xinput list | grep Touchpad | grep -o 'id=..' | grep -o '[0-9]*'`
