@@ -5,7 +5,7 @@
 export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export EDITOR="vim"
 export TERMINAL="st"
-export BROWSER="brave"
+export BROWSER="firefox-developer-edition"
 export READER="zathura"
 export FILE="nnn"
 export SUDO_ASKPASS="$HOME/.scripts/tools/dmenupass"
