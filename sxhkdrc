@@ -116,7 +116,7 @@ super + q
     bspc node .focused --kill
 
 # REALLY kill it
-super + Shift + q
+super + shift + q
     kill -9 `xdotool getwindowfocus getwindowpid`
 
 # file manager

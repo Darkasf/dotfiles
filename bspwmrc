@@ -1,18 +1,16 @@
 #! /bin/sh
-# If refreshing bspwm, remove all previous rules to prevent doubling up.
 if [[ $(hostname) == 'archy' ]]; then
     bspc monitor DVI-D-0 -d 1 2 3 4 5 6 7 8 9
     bspc monitor HDMI-0 -d 10
 elif [[ $(hostname) == 'thinky' ]]; then
     bspc monitor VGA-0 -d I II III IV V
     bspc monitor VGA-1 -d VI VII VIII IX X
-elif [[ $(hostname) == 'oldy' ]]; then
-    bspc monitor DVI-I-3 -d VI VII VIII IX X
-    bspc monitor DVI-I-2 -d I II III IV V
+elif [[ $(hostname) == 'haunter' ]]; then
+    bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8 9 10
 fi
 
+# If refreshing bspwm, remove all previous rules to prevent doubling up.
 bspc rule -r "*"
-mainmonitor="$(bspc query --monitors --names | grep -v LVDS | head -n 1)"
 
 # keybinds
 sxhkd &
@@ -29,7 +27,6 @@ unclutter &
 # autolocking
 autolock &
 
-bspc monitor $mainmonitor -d 1 2 3 4 5 6 7 8 9
 bspc desktop -f 1
 
 bspc config border_width         2
@@ -41,6 +38,6 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Discord desktop='^10'
+bspc rule -a discord desktop='^10'
 bspc rule -a Screenkey manage=off
 
