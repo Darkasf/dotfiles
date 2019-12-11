@@ -41,5 +41,5 @@ bspc config gapless_monocle      true
 # application rules
 bspc rule -a discord desktop='^10'
 bspc rule -a Screenkey manage=off
-bspc rule -a libreoffice desktop='^5'
 
+source ~/.profile
