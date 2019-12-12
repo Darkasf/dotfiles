@@ -29,6 +29,10 @@ super + y
 super + g
 	bspc node -s biggest.active
 
+# lock
+super + x
+    lock.sh
+
 #
 # state/flags
 #
