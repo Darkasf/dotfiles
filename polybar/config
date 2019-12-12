@@ -65,7 +65,7 @@ font-3 = Symbola:pixelsize=9;1
 ; Other modules: xkeyboard filesystem xbacklight backlight-acpi cpu memory temperature powermenu weather
 modules-left = bspwm xwindow
 ;modules-center =
-modules-right = volume wlan eth battery date
+modules-right = volume wlan eth battery xkeyboard date
 
 tray-position = right
 tray-padding = 0
@@ -231,13 +231,13 @@ interval = 3.0
 
 format-connected = 直 <label-connected>
 format-connected-underline = ${colors.darkmagenta}
-label-connected = %essid%
+label-connected = "%{A1:networkmanager_dmenu &:} %essid%%{A}"
 
 ;format-disconnected =
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-label-disconnected = 睊no wifi
+label-disconnected = "%{A1:networkmanager_dmenu &:} no wifi%{A}"
 label-disconnected-foreground = ${colors.gray}
 
 ; <ramp-signal>
@@ -247,6 +247,7 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.gray}
+
 
 [module/eth]
 type = internal/network
