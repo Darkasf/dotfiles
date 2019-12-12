@@ -19,8 +19,8 @@ super + F2
     "$HOME/.config/bspwm/bspwmrc"
 
 # make sxhkd reload its configuration files:
-super + Escape
-	pkil
+#super + Escape
+
 # send the newest marked node to the newest preselected node
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local
@@ -29,6 +29,12 @@ super + y
 super + g
 	bspc node -s biggest.active
 
+# keyboard maps
+super + comma
+    setxkbmap us
+
+super + period
+    setxkbmap hu 101_qwerty_dot_nodead
 #
 # state/flags
 #
@@ -113,7 +119,7 @@ super + {Left,Down,Up,Right}
 
 # kill focused window
 super + q
-    bspc node .focused --kill
+    bspc node -c
 
 # REALLY kill it
 super + shift + q
