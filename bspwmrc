@@ -41,4 +41,4 @@ bspc config gapless_monocle      true
 bspc rule -a discord desktop='^10'
 bspc rule -a Screenkey manage=off
 
-source ~/.profile
+sleep 2 && source ~/.profile
