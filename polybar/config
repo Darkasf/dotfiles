@@ -92,6 +92,9 @@ format-foreground = ${colors.blue}
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
+blacklist-1 = scroll lock
+blacklist-2 = caps lock
+;format-spacing = 0
 
 ;format-prefix = " "
 format-prefix-foreground = ${colors.gray}
