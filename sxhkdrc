@@ -33,6 +33,12 @@ super + g
 super + x
     lock.sh
 
+# keyboard maps
+super + comma
+    setxkbmap us
+
+super + period
+    setxkbmap hu 101_qwerty_dot_nodead
 #
 # state/flags
 #
@@ -66,8 +72,8 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+super + Tab
+	bspc desktop -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
@@ -129,7 +135,7 @@ super + r
 
 # nmtui
 super + shift + w
-	$TERMINAL -e sudo nmtui
+	sudo networkmanager_dmenu
 
 # emojis?
 super + grave

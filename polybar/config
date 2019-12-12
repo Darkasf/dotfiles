@@ -65,7 +65,7 @@ font-3 = Symbola:pixelsize=9;1
 ; Other modules: xkeyboard filesystem xbacklight backlight-acpi cpu memory temperature powermenu weather
 modules-left = bspwm xwindow
 ;modules-center =
-modules-right = volume wlan eth battery date
+modules-right = volume wlan eth battery xkeyboard date
 
 tray-position = right
 tray-padding = 0
@@ -92,8 +92,11 @@ format-foreground = ${colors.blue}
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
+blacklist-1 = scroll lock
+blacklist-2 = caps lock
+;format-spacing = 0
 
-format-prefix = " "
+;format-prefix = " "
 format-prefix-foreground = ${colors.gray}
 format-prefix-underline = ${colors.darkmagenta}
 
@@ -229,15 +232,15 @@ type = internal/network
 interface = wlp2s0
 interval = 3.0
 
-format-connected = 直 <label-connected>
+;format-connected = 直 <label-connected>
 format-connected-underline = ${colors.darkmagenta}
-label-connected = %essid%
+label-connected = "%{A1:networkmanager_dmenu &:}%essid%%{A}"
 
 ;format-disconnected =
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-label-disconnected = 睊no wifi
+label-disconnected = "%{A1:networkmanager_dmenu &:} no wifi%{A}"
 label-disconnected-foreground = ${colors.gray}
 
 ; <ramp-signal>
@@ -248,6 +251,7 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.gray}
 
+
 [module/eth]
 type = internal/network
 interface = enp30s0
@@ -255,8 +259,8 @@ interval = 3.0
 
 format-connected-underline = ${colors.darkgreen}
 ;format-connected-underline = ${colors.green}
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.gray}
+;format-connected-prefix = " "
+;format-connected-prefix-foreground = ${colors.gray}
 label-connected = %local_ip%
 
 ;format-disconnected =
@@ -277,7 +281,7 @@ time = "%I:%M%p"
 ;time-alt = %H:%M:%S
 ;time-alt = %H:%M:%S
 
-format-prefix = " "
+;format-prefix = " "
 format-prefix-foreground = ${colors.gray}
 format-underline = ${colors.blue}
 
@@ -290,7 +294,7 @@ format-volume = <label-volume> <bar-volume>
 label-volume = 
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+;format-muted-prefix = " "
 format-muted-foreground = ${colors.gray}
 label-muted = muted
 
@@ -313,7 +317,7 @@ bar-volume-empty-foreground = ${colors.gray}
 
 [module/battery]
 type = internal/battery
-battery = BAT0
+battery = BAT1
 adapter = ADP1
 full-at = 98
 
@@ -325,8 +329,8 @@ format-charging-underline = ${colors.darkyellow}
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.gray}
+;format-full-prefix = " "
+;format-full-prefix-foreground = ${colors.gray}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
