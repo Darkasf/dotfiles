@@ -228,7 +228,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = wlp4s0
 interval = 3.0
 
 ;format-connected = 直 <label-connected>
@@ -316,7 +316,7 @@ bar-volume-empty-foreground = ${colors.gray}
 
 [module/battery]
 type = internal/battery
-battery = BAT1
+battery = BAT0
 adapter = ADP1
 full-at = 98
 
@@ -325,7 +325,6 @@ format-charging = <animation-charging> <label-charging>
 format-charging-underline = ${colors.darkyellow}
 
 ;format-discharging = <label-discharging>
-format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 ;format-full-prefix = " "
