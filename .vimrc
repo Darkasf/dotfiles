@@ -40,23 +40,6 @@ nnoremap <C-k> :m .-2<LF>==
 "skeletons
 nnoremap <leader>html :r $HOME/Templates/.skeleton.html<LF>4jf>a
 
-" plugins
-if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
-	echo "Downloading junegunn/vim-plug to manage plugins..."
-	silent !mkdir -p ~/.config/nvim/autoload/
-	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
-endif
-
-call plug#begin('~/.config/nvim/plugged')
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree'
-Plug 'junegunn/goyo.vim'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'jreybert/vimagit'
-Plug 'vimwiki/vimwiki'
-Plug 'tpope/vim-commentary'
-Plug 'vifm/vifm.vim'
-call plug#end()
 
 set bg=light
 set go=a
