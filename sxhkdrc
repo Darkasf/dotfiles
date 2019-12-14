@@ -135,7 +135,7 @@ super + r
 
 # nmtui
 super + shift + w
-	sudo networkmanager_dmenu
+    sudo networkmanager_dmenu
 
 # emojis?
 super + grave
