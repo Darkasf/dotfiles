@@ -29,10 +29,10 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 # Switch escape and caps if tty:
 sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
 
-#disable natural scrolling
-id=`xinput list | grep Touchpad | grep -o 'id=..' | grep -o '[0-9]*'`
-prop=`xinput list-props "$id" | grep -o 'Natural Scrolling Enabled (...)' | grep -o '[0-9]*'`
-xinput set-prop "$id" "$prop" 1
-
 #set refresh rate
 xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
+
+# invert scroll
+if [[ $(hostname) == "thinky" ]]; then
+    xinput set-prop 12 287 -133 -133
+fi
