@@ -40,5 +40,6 @@ bspc config gapless_monocle      true
 # application rules
 bspc rule -a discord desktop='^10'
 bspc rule -a Screenkey manage=off
-
-sleep 2 && source ~/.profile
+if [[ $(hostname) == "thinky" ]]; then
+    xinput set-prop 12 287 -133 -133
+fi

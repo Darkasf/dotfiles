@@ -32,7 +32,3 @@ sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
 #set refresh rate
 xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
 
-# invert scroll
-if [[ $(hostname) == "thinky" ]]; then
-    xinput set-prop 12 287 -133 -133
-fi
