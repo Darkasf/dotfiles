@@ -135,7 +135,7 @@ super + r
 
 # nmtui
 super + shift + w
-    sudo networkmanager_dmenu
+    $TERMINAL -e nmtui
 
 # emojis?
 super + grave
@@ -178,8 +178,5 @@ XF86AudioRaiseVolume
     pactl set-sink-volume 0 +5%
 
 # brightness
-super + F6
-    sudo brightness inc
-
-super + F5
-    sudo brightness dec
+super + {F5,F6}
+    sudo brightness {dec,inc}
