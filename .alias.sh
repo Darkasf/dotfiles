@@ -13,7 +13,6 @@ alias v="vim"
 alias rm="rm -I"
 alias bc="bc -ql"
 alias mutt="neomutt"
-alias cfi="vim ~/.config/i3/config"
 cdmkdir() {
 	mkdir -p "$1";
 	cd "$1";
