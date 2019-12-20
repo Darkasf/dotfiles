@@ -44,6 +44,10 @@ bspc rule -a Zathura state=tiled
 
 #touchpad setup
 if [[ $(hostname) == "thinky" ]]; then
-    xinput set-prop 12 287 -133 -133
-    xinput set-prop 12 274 0
+    tpID=`xinput list | grep TouchPad | grep -o '[0-9][0-9]'`
+    scrollID=`xinput list-props $tpID | grep "Scrolling Distance" | grep -o '[0-9][0-9][0-9]' | head -1`
+    accelID=`xinput list-props $tpID | grep "Accel Profile" | grep -o '[0-9][0-9][0-9]'`
+    xinput set-prop $tpID $scrollID -133 -133
+    xinput set-prop $tpID $accelID 0
+
 fi
