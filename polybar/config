@@ -65,7 +65,7 @@ font-3 = Symbola:pixelsize=9;1
 ; Other modules: xkeyboard filesystem xbacklight backlight-acpi cpu memory temperature powermenu weather
 modules-left = bspwm xwindow
 ;modules-center =
-modules-right = volume wlan eth battery xkeyboard date
+modules-right = volume vpn wlan eth battery xkeyboard date
 
 tray-position = right
 tray-padding = 0
@@ -239,7 +239,7 @@ label-connected = "%{A1:networkmanager_dmenu &:}%essid%%{A}"
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-label-disconnected = "%{A1:networkmanager_dmenu &:} no wifi%{A}"
+label-disconnected = "%{A1:$TERMINAL -e nmtui:} no wifi%{A}"
 label-disconnected-foreground = ${colors.gray}
 
 ; <ramp-signal>
@@ -393,6 +393,18 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/vpn]
+type = custom/script
+
+exec = vpnstat
+interval = 2.0
+
+format-underline = ${colors.red}
+
+label = %output%
+click-left = $TERMINAL -e sudo -A protonvpn c
+click-right = sudo -A protonvpn d
 
 [settings]
 screenchange-reload = true
