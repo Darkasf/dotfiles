@@ -30,5 +30,16 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
 
 #set refresh rate
-xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
 
+hostname=$(hostname)
+
+case $hostname in
+    thinky)
+        export WLAN=wlp4s0
+        export ETH=enp2s0
+        ;;
+    archy)
+        export ETH=enp30s0
+        xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
+        ;;
+esac

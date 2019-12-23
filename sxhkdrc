@@ -133,6 +133,10 @@ super + shift + q
 super + r
 	$TERMINAL -e $FILE
 
+# rescan wifi networks
+super + shift + F5
+    nmcli device wifi
+
 # nmtui
 super + shift + w
     $TERMINAL -e nmtui
