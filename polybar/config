@@ -243,11 +243,12 @@ format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = "%{A1:$TERMINAL -e nmtui:} no wifi%{A}"
 label-disconnected-foreground = ${colors.gray}
 ; <ramp-signal>
-ramp-signal-0 = a
-ramp-signal-1 = b
-ramp-signal-2 = c
-ramp-signal-3 = d
-ramp-signal-4 = e
+ramp-signal-0 = 😱
+ramp-signal-1 = 😠
+ramp-signal-2 = 😒
+ramp-signal-3 = 😊
+ramp-signal-4 = 😃
+ramp-signal-5 = 😈
 ramp-signal-foreground = ${colors.gray}
 
 [module/eth]
