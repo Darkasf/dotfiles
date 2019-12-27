@@ -42,12 +42,21 @@ bspc rule -a discord desktop='^10'
 bspc rule -a Screenkey manage=off
 bspc rule -a Zathura state=tiled
 
-#touchpad setup
-if [[ $(hostname) == "thinky" ]]; then
-    tpID=`xinput list | grep TouchPad | grep -o '[0-9][0-9]'`
-    scrollID=`xinput list-props $tpID | grep "Scrolling Distance" | grep -o '[0-9][0-9][0-9]' | head -1`
-    accelID=`xinput list-props $tpID | grep "Accel Profile" | grep -o '[0-9][0-9][0-9]'`
-    xinput set-prop $tpID $scrollID -133 -133
-    xinput set-prop $tpID $accelID 0
 
-fi
+hostname=$(hostname)
+
+case $hostname in
+    "thinky")
+        export WLAN="wlp4s0"
+        export ETH="enp2s0"
+        tpID=`xinput list | grep TouchPad | grep -o '[0-9][0-9]'`
+        scrollID=`xinput list-props $tpID | grep "Scrolling Distance" | grep -o '[0-9][0-9][0-9]' | head -1`
+        accelID=`xinput list-props $tpID | grep "Accel Profile" | grep -o '[0-9][0-9][0-9]'`
+        xinput set-prop $tpID $scrollID -133 -133
+        xinput set-prop $tpID $accelID 0
+        ;;
+    "archy")
+        export ETH="enp30s0"
+        xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
+        ;;
+esac

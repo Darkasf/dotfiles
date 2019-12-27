@@ -60,6 +60,7 @@ font-0 = mono:pixelsize=12;1
 font-1 = Inconsolata Nerd Font:size=8;1
 font-2 = Noto Color Emoji:scale=10:style=Regular;2
 font-3 = Symbola:pixelsize=9;1
+font-4 = Font Awesome 5 Free:style=Solid
 
 
 ; Other modules: xkeyboard filesystem xbacklight backlight-acpi cpu memory temperature powermenu weather
@@ -228,7 +229,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = ${env:WLAN:wlp4s0}
+interface = ${env:WLAN:wlp2s0}
 interval = 3.0
 
 ;format-connected = 直 <label-connected>
@@ -393,6 +394,11 @@ format-underline = ${colors.red}
 label = %output%
 click-left = $TERMINAL -e sudo -A protonvpn c
 click-right = sudo -A protonvpn d
+
+[module/test]
+type = custm/script
+
+label = ${env:WLAN}
 
 [settings]
 screenchange-reload = true
