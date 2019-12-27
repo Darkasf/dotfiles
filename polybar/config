@@ -232,7 +232,7 @@ type = internal/network
 interface = ${env:WLAN:wlp2s0}
 interval = 3.0
 
-;format-connected = 直 <label-connected>
+format-connected = <ramp-signal> <label-connected>
 format-connected-underline = ${colors.darkmagenta}
 label-connected = "%{A1:networkmanager_dmenu &:}%essid%%{A}"
 
@@ -242,7 +242,13 @@ format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 label-disconnected = "%{A1:$TERMINAL -e nmtui:} no wifi%{A}"
 label-disconnected-foreground = ${colors.gray}
-
+; <ramp-signal>
+ramp-signal-0 = a
+ramp-signal-1 = b
+ramp-signal-2 = c
+ramp-signal-3 = d
+ramp-signal-4 = e
+ramp-signal-foreground = ${colors.gray}
 
 [module/eth]
 type = internal/network
@@ -313,11 +319,11 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = ${colors.darkyellow}
 
-;format-discharging = <label-discharging>
+format-discharging = <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-;format-full-prefix = " "
-;format-full-prefix-foreground = ${colors.gray}
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.gray}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
