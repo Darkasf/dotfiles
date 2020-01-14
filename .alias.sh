@@ -24,3 +24,4 @@ alias n="nnn"
 alias cfb="vim ~/.config/bspwm/bspwmrc"
 alias cfk="vim ~/.config/sxhkd/sxhkdrc"
 alias cfp="vim ~/.config/polybar/config"
+alias ip='ip --color=auto'
