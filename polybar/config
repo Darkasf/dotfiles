@@ -389,22 +389,6 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
-[module/vpn]
-type = custom/script
-
-exec = vpnstat
-interval = 2.0
-
-format-underline = ${colors.red}
-
-label = %output%
-click-left = $TERMINAL -e sudo -A protonvpn c
-click-right = sudo -A protonvpn d
-
-[module/test]
-type = custm/script
-
-label = ${env:WLAN}
 
 [settings]
 screenchange-reload = true
