@@ -141,10 +141,6 @@ super + shift + F5
 super + shift + w
     $TERMINAL -e nmtui
 
-# emojis?
-super + grave
-	dmenuunicode
-
 # shutdown
 super + shift + x
 	prompt "Shutdown computer?" "sudo -A shutdown -h now"
