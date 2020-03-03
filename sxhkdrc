@@ -180,3 +180,7 @@ XF86AudioRaiseVolume
 # brightness
 super + {F5,F6}
     sudo brightness {dec,inc}
+
+# lecture
+super + e
+    lecture
