@@ -67,10 +67,6 @@ super + {p,b,comma,period}
 super + {_,shift + }c
 	bspc node -f {next,prev}.local
 
-# focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
-
 # focus the last node/desktop
 super + Tab
 	bspc desktop -f last
@@ -184,3 +180,10 @@ super + {F5,F6}
 # lecture
 super + e
     lecture
+# monitor stuff
+super + ctrl + bracket{left,right}
+    cycle_dir={prev,next}; \
+    bspc desktop "$\{cycle_dir\}.local" -f; \
+    for mon_id in $(bspc query -M -m '.!focused'); do \
+        bspc desktop "$\{mon_id\}:focused#$\{cycle_dir\}.local" -a; \
+    done
