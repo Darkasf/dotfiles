@@ -145,6 +145,10 @@ super + shift + x
 super + shift + BackSpace
 	prompt "Reboot computer?" "sudo -A reboot"
 
+# suspend
+super + BackSpace
+    prompt "Suspend computer?" "sudo -A systemctl suspend"
+
 # backlight
 XF86MonBrightnessDown
 	xbacklight -dec 15
