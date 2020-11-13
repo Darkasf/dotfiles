@@ -147,7 +147,7 @@ super + shift + BackSpace
 
 # suspend
 super + BackSpace
-    prompt "Suspend computer?" "sudo -A systemctl suspend"
+    prompt "Suspend computer?" "systemctl suspend"
 
 # backlight
 XF86MonBrightnessDown
@@ -168,6 +168,10 @@ super + {F9,F10}
 	{dmenumount,dmenuumount}
 
 # audio
+# play pause spotify only
+XF86AudioPlay
+    playerctl -p spotify play-pause
+
 XF86AudioMute
     pactl set-sink-mute 0 toggle
 
