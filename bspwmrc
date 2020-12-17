@@ -30,6 +30,8 @@ picom -bc --config "$HOME/.config/picom.conf"
 unclutter &
 # autolocking
 autolock &
+# redshift
+redshift-gtk &
 
 bspc desktop -f 1
 
@@ -61,4 +63,6 @@ case $HOSTNAME in
     archy)
         xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
         ;;
+    trashy)
+        xrandr --output DVI-I-1 --mode 1920x1080 --rate 144
 esac
