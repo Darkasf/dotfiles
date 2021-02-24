@@ -64,7 +64,7 @@ font-4 = Font Awesome 5 Free:style=Solid
 
 
 ; Other modules: xkeyboard filesystem xbacklight backlight-acpi cpu memory temperature powermenu weather
-modules-left = bspwm xwindow
+modules-left = bspwm spotify
 ;modules-center =
 modules-right = volume vpn wlan eth battery xkeyboard date
 
@@ -399,3 +399,10 @@ screenchange-reload = true
 [global/wm]
 margin-top = 5
 margin-bottom = 5
+
+[module/spotify]
+type = custom/script
+interval = 1
+format = <label>
+exec = python /usr/bin/spotify_status.py -f '{artist}: {song}'
+format-underline = #1db954
