@@ -7,9 +7,9 @@ elif [[ $(hostname) == 'thinky' ]]; then
 elif [[ $(hostname) == 'haunter' ]]; then
     bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8 9 10
 elif [[ $(hostname) == 'trashy' ]]; then
-    bspc monitor DVI-I-1 -d 1 2 3 4 5 6 7 8 9
-    #bspc monitor DP-1 -d 1 2 3 4 5 6 7 8 9 10
-    bspc monitor DP-1 -d 10
+    #bspc monitor DVI-I-1 -d 1 2 3 4 5 6 7 8 9
+    bspc monitor DP-1 -d 1 2 3 4 5 6 7 8 9 10
+    #bspc monitor DP-1 -d 10
 fi
 
 # If refreshing bspwm, remove all previous rules to prevent doubling up.
@@ -17,9 +17,9 @@ bspc rule -r "*"
 # set a random wallpaper
 setbg `find "$HOME/Pictures/wallpapers/" | sort -R | tail -n 1` &
 # keybinds
-sxhkd &
+pgrep sxhkd || sxhkd &
 # start dunst for notifcation
-dunst &
+pgrep dunst || dunst &
 # bar
 "$HOME/dotfiles/polybar/launch.sh" &
 # remaps
@@ -29,9 +29,9 @@ picom -bc --config "$HOME/.config/picom.conf"
 # hide cursor
 unclutter &
 # autolocking
-autolock &
+pgrep autolock || autolock &
 # redshift
-redshift-gtk &
+pgrep redshift || redshift-gtk &
 
 bspc desktop -f 1
 

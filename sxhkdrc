@@ -1,5 +1,5 @@
-#
 # wm independent hotkeys
+#
 #
 
 # terminal emulator
@@ -156,11 +156,8 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
 	xbacklight -inc 15
 
-# Take screenshot
-Print
-	maim pic-full-$(date '+%y%m%d-%H%M-%S').png
 # Pick screenshot type
-shift + Print
+shift + End
 	maimpick
 
 # Mount a USB drive or Android device
