@@ -191,3 +191,7 @@ super + ctrl + bracket{left,right}
     for mon_id in $(bspc query -M -m '.!focused'); do \
         bspc desktop "$\{mon_id\}:focused#$\{cycle_dir\}.local" -a; \
     done
+
+# turn trackpad on/off
+super + F7
+    touch-toggle

@@ -13,7 +13,8 @@ fi
 # If refreshing bspwm, remove all previous rules to prevent doubling up.
 bspc rule -r "*"
 # set a random wallpaper
-setbg `find "$HOME/Pictures/wallpapers/" | sort -R | tail -n 1` &
+#setbg `find "$HOME/Pictures/wallpapers/" | sort -R | tail -n 1` &
+setbg
 # keybinds
 sxhkd &
 # start dunst for notifcation
