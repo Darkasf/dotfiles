@@ -1,5 +1,5 @@
-#
 # wm independent hotkeys
+#
 #
 
 # terminal emulator
@@ -147,7 +147,7 @@ super + shift + BackSpace
 
 # suspend
 super + BackSpace
-    prompt "Suspend computer?" "sudo -A systemctl suspend"
+    prompt "Suspend computer?" "systemctl suspend"
 
 # backlight
 XF86MonBrightnessDown
@@ -156,11 +156,8 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
 	xbacklight -inc 15
 
-# Take screenshot
-Print
-	maim pic-full-$(date '+%y%m%d-%H%M-%S').png
 # Pick screenshot type
-shift + Print
+shift + End
 	maimpick
 
 # Mount a USB drive or Android device
@@ -168,6 +165,10 @@ super + {F9,F10}
 	{dmenumount,dmenuumount}
 
 # audio
+# play pause spotify only
+XF86AudioPlay
+    playerctl -p spotify play-pause
+
 XF86AudioMute
     pactl set-sink-mute 0 toggle
 

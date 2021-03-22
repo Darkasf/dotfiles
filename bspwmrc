@@ -7,7 +7,9 @@ elif [[ $(hostname) == 'thinky' ]]; then
 elif [[ $(hostname) == 'haunter' ]]; then
     bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8 9 10
 elif [[ $(hostname) == 'trashy' ]]; then
+    #bspc monitor DVI-I-1 -d 1 2 3 4 5 6 7 8 9
     bspc monitor DP-1 -d 1 2 3 4 5 6 7 8 9 10
+    #bspc monitor DP-1 -d 10
 fi
 
 # If refreshing bspwm, remove all previous rules to prevent doubling up.
@@ -16,9 +18,9 @@ bspc rule -r "*"
 #setbg `find "$HOME/Pictures/wallpapers/" | sort -R | tail -n 1` &
 setbg
 # keybinds
-sxhkd &
+pgrep sxhkd || sxhkd &
 # start dunst for notifcation
-dunst &
+pgrep dunst || dunst &
 # bar
 "$HOME/dotfiles/polybar/launch.sh" &
 # remaps
@@ -28,7 +30,9 @@ picom -bc --config "$HOME/.config/picom.conf"
 # hide cursor
 unclutter &
 # autolocking
-autolock &
+pgrep autolock || autolock &
+# redshift
+pgrep redshift || redshift-gtk &
 
 bspc desktop -f 1
 
@@ -60,4 +64,6 @@ case $HOSTNAME in
     archy)
         xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
         ;;
+    trashy)
+        xrandr --output DVI-I-1 --mode 1920x1080 --rate 144
 esac
