@@ -1,9 +1,13 @@
 #! /bin/sh
+# If refreshing bspwm, remove all previous rules to prevent doubling up.
+bspc rule -r "*"
+
 if [[ $(hostname) == 'archy' ]]; then
     bspc monitor DVI-D-0 -d 1 2 3 4 5 6 7 8 9
     bspc monitor HDMI-0 -d 10
 elif [[ $(hostname) == 'thinky' ]]; then
     bspc monitor eDP -d 1 2 3 4 5 6 7 8 9 10
+#    bspc monitor HDMI-A-0 -d 10
 elif [[ $(hostname) == 'haunter' ]]; then
     bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8 9 10
 elif [[ $(hostname) == 'trashy' ]]; then
@@ -12,8 +16,6 @@ elif [[ $(hostname) == 'trashy' ]]; then
     #bspc monitor DP-1 -d 10
 fi
 
-# If refreshing bspwm, remove all previous rules to prevent doubling up.
-bspc rule -r "*"
 # set a random wallpaper
 #setbg `find "$HOME/Pictures/wallpapers/" | sort -R | tail -n 1` &
 setbg
@@ -51,6 +53,7 @@ bspc rule -a Zathura state=tiled
 bspc rule -a Soffice desktop='^5'
 bspc rule -a Tde:\* border=off
 bspc rule -a firefoxdeveloperedition:Toolkit state=floating sticky=on
+bspc rule -a Spotify desktop='^9'
 
 
 case $HOSTNAME in

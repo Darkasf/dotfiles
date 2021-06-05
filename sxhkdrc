@@ -157,7 +157,7 @@ XF86MonBrightnessUp
 	xbacklight -inc 15
 
 # Pick screenshot type
-shift + End
+shift + Print
 	maimpick
 
 # Mount a USB drive or Android device
