@@ -6,7 +6,7 @@ export PATH="$PATH:$(du "$HOME/.scripts/" | grep -v "git" |  cut -f2 | tr '\n' '
 
 export EDITOR="vim"
 export TERMINAL="st"
-export BROWSER="firefox-developer-edition"
+export BROWSER="firefox"
 export READER="zathura"
 export FILE="nnn"
 export XDG_CONFIG_HOME="$HOME/.config"
