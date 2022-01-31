@@ -99,6 +99,6 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 export DEFAULT_USER=w
-source $HOME/dotfiles/.alias.sh
+source $HOME/dotfiles/alias
 setopt no_share_history
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
