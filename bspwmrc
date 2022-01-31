@@ -2,20 +2,6 @@
 # If refreshing bspwm, remove all previous rules to prevent doubling up.
 bspc rule -r "*"
 
-if [[ $(hostname) == 'archy' ]]; then
-    bspc monitor DVI-D-0 -d 1 2 3 4 5 6 7 8 9
-    bspc monitor HDMI-0 -d 10
-elif [[ $(hostname) == 'thinky' ]]; then
-    bspc monitor eDP -d 1 2 3 4 5 6 7 8 9 10
-#    bspc monitor HDMI-A-0 -d 10
-elif [[ $(hostname) == 'haunter' ]]; then
-    bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8 9 10
-elif [[ $(hostname) == 'trashy' ]]; then
-    #bspc monitor DVI-I-1 -d 1 2 3 4 5 6 7 8 9
-    bspc monitor DP-1 -d 1 2 3 4 5 6 7 8 9 10
-    #bspc monitor DP-1 -d 10
-fi
-
 # set a random wallpaper
 #setbg `find "$HOME/Pictures/wallpapers/" | sort -R | tail -n 1` &
 setbg
@@ -33,16 +19,9 @@ picom -bc --config "$HOME/.config/picom.conf"
 unclutter &
 # autolocking
 pgrep autolock || autolock &
-# redshift
-pgrep redshift || redshift-gtk &
 
 bspc desktop -f 1
 
-bspc config border_width       2
-bspc config window_gap         4
-bspc config bottom_padding    -6
-bspc config left_padding      -6
-bspc config right_padding     -6
 bspc config focus_follows_pointer true
 
 bspc config split_ratio          0.52
@@ -59,20 +38,47 @@ bspc rule -a firefox:Toolkit state=floating sticky=on
 bspc rule -a Spotify desktop='^9'
 bspc rule -a Peek state=floating
 
-# fix intellij
+# fix intellij and possibly other stupid applications
 wmname LG3D
 
+# computer specific settting
 case $HOSTNAME in
     thinky)
+        # workspaces on the internal display
+        bspc monitor eDP -d 1 2 3 4 5 6 7 8 9 10
+
+        # sort of good gaps
+        bspc config border_width       2
+        bspc config window_gap         4
+        bspc config bottom_padding    -6
+        bspc config left_padding      -6
+        bspc config right_padding     -6
+
+        # trackpad fixes
         tpID=`xinput list | grep TouchPad | grep -o '[0-9][0-9]'`
         scrollID=`xinput list-props $tpID | grep "Scrolling Distance" | grep -o '[0-9][0-9][0-9]' | head -1`
         accelID=`xinput list-props $tpID | grep "Accel Profile" | grep -o '[0-9][0-9][0-9]'`
         xinput set-prop $tpID $scrollID -133 -133
         xinput set-prop $tpID $accelID 0
+
+        # blue light filter
+        pgrep redshift || redshift-gtk &
         ;;
     archy)
+        # workspace setup
+        bspc wm --reorder-monitors DVI-D-0 DP-3 HDMI-0
+        bspc monitor DVI-D-0 -d 1 2 3 4 5 6 7 8
+        bspc monitor DP-3 -d 9
+        bspc monitor HDMI-0 -d 10
+        # make sure the refresh rate is right
         xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
+
+        # gaps that aren't hideous on multi monitor setups
+        bspc config border_width       2
+        bspc config window_gap          0
         ;;
     trashy)
+        # monitor
+        bspc monitor DP-1 -d 1 2 3 4 5 6 7 8 9 10
         xrandr --output DVI-I-1 --mode 1920x1080 --rate 144
 esac
