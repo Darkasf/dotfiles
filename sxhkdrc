@@ -34,11 +34,8 @@ super + x
     lock.sh
 
 # keyboard maps
-super + comma
-    setxkbmap us
-
-super + period
-    setxkbmap hu 101_qwerty_dot_nodead
+super + space
+    kbmapchange
 #
 # state/flags
 #
