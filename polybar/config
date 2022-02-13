@@ -416,3 +416,7 @@ tail = false
 interval = 1
 click-left = polybar-wireguard --toggle &
 format-underline = ${colors.green}
+
+[module/pulseffects-presets]
+type = custom/script
+exec = easyeffects-presets [option...] <action>

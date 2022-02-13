@@ -19,6 +19,8 @@ picom -bc --config "$HOME/.config/picom.conf"
 unclutter &
 # autolocking
 pgrep autolock || autolock &
+# autoeq
+pgrep easyeffects || easyeffects --gapplication-service &
 
 bspc desktop -f 1
 
