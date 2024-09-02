@@ -18,10 +18,12 @@ cdmkdir() {
 	cd "$1";
 }
 alias py="python"
-alias nuke="killall -9"
 alias sudoe="sudo -e"
 alias n="nnn"
 alias cfb="vim ~/.config/bspwm/bspwmrc"
 alias cfk="vim ~/.config/sxhkd/sxhkdrc"
 alias cfp="vim ~/.config/polybar/config"
 alias ip='ip --color=auto'
+alias rebooty="reboot"
+alias pac="sudo pacman"
+alias yay="yay"
