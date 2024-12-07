@@ -63,7 +63,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git sudo textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo)
+plugins=(git sudo lol)
 
 
 # User configuration
@@ -102,3 +102,12 @@ export DEFAULT_USER=w
 source $HOME/dotfiles/alias
 setopt no_share_history
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/w/google-cloud-sdk/path.zsh.inc' ]; then . '/home/w/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/w/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/w/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Created by `pipx` on 2024-03-05 17:50:49
+export PATH="$PATH:/home/w/.local/bin"
